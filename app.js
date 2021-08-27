@@ -17,13 +17,17 @@ app.get('/',(req,res)=>{
     res.render('index.ejs')
 })
 
-app.get('/result',(req,res)=>{
+app.post('/result',(req,res)=>{
     var n1 = parseInt(req.body.num1)
     var n2 = parseInt(req.body.num2)
 
     let adds = new Calculator(n1,n2)
     let products = new Calculator(n1,n2)
-    res.send(adds.add+"is added")
+   if(req.body.add){
+       res.send(adds.add)
+   }else if (req.body.product){
+       res.send(products.product)
+   }
 })
 
 
