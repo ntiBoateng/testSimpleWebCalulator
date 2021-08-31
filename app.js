@@ -23,11 +23,18 @@ app.post('/result',(req,res)=>{
 
     let adds = new Calculator(n1,n2)
     let products = new Calculator(n1,n2)
-   if(req.body.add){
-       res.send(adds.add)
-   }else if (req.body.product){
-       res.send(products.product)
+  
+
+    
+   var rd1 = document.getElementById("rd1")
+   var rd2 = document.getElementById("rd2")
+
+   if(rd1.checked==true){
+    res.send(adds.add)
+   }else if(rd2.checked==true){
+    res.send(products.add)
    }
+
 })
 
 
