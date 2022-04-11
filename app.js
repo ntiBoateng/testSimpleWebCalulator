@@ -16,7 +16,9 @@ const PORT = process.env.PORT || 4000
 app.get('/',(req,res)=>{
     res.render('index.ejs')
 })
-
+app.get("/result",(req,res)=>{
+    res.render("result.ejs")
+})
 app.post('/result',(req,res)=>{
     var n1 = parseInt(req.body.num1)
     var n2 = parseInt(req.body.num2)
@@ -26,14 +28,7 @@ app.post('/result',(req,res)=>{
   
 
     
-   var rd1 = document.getElementById("rd1")
-   var rd2 = document.getElementById("rd2")
 
-   if(rd1.checked==true){
-    res.send(adds.add)
-   }else if(rd2.checked==true){
-    res.send(products.add)
-   }
 
 })
 
